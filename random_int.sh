@@ -5,7 +5,13 @@ function my-random-int {
   MAXINT=${MAXINT:-99}
   # echo "...[random_int] Debug: MAXINT is $MAXINT"
 
-  random=$(awk -v MAXINT=$MAXINT 'BEGIN { srand() ; select = 1 + int(rand() * MAXINT) ; print select }')
+  random=$(awk -v MAXINT=$MAXINT '\
+    BEGIN { \
+      srand(); \
+      r = rand() * MAXINT; \
+      r = 1 + int(r); \
+      print r \
+    }')
 
   # echo "...[random_int] Debug: Done getting random integer up to $MAXINT"
   echo $random
