@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAXINT=${1:100}
+MAXINT=${1:-100}
 echo "...[random_int] Trace: MAXINT is $MAXINT"
 
 set -x
