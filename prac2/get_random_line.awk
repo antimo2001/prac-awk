@@ -12,10 +12,10 @@ function f_random_int(MAXINT) {
   return r
 }
 
-/.*/ {
+/^-/ {
   linecount += 1
   lines[linecount] = $0
-  # printf("...Debug: setup lines[%d]: %s\n", linecount, lines[linecount])
+  printf("...Debug: setup lines[%d]: %s\n", linecount, lines[linecount])
 }
 
 END {
